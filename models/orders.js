@@ -4,16 +4,21 @@ module.exports = (sequelize, DataTypes) => {
     "Orders",
     {
       status: DataTypes.TEXT,
-      uid: DataTypes.TEXT
+      uid: DataTypes.INTEGER
     },
     {}
   );
   Orders.associate = function(models) {
     Orders.belongsTo(models.User, { foreignKey: "uid" });
     Orders.hasMany(models.OrderProducts, {
-      as: "OrderProducts",
+      // as: "OrderProducts",
       foreignKey: "orderId"
     });
   };
+
+  // Orders.create({
+  //   status: "Pendente",
+  //   uid: 2
+  // });
   return Orders;
 };

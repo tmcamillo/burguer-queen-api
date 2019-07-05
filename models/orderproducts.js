@@ -10,11 +10,11 @@ module.exports = (sequelize, DataTypes) => {
   );
   OrderProducts.associate = function(models) {
     OrderProducts.belongsTo(models.Products, {
-      as: "Products",
+      // as: "Products",
       foreignKey: "productId"
     });
     OrderProducts.belongsTo(models.Orders, {
-      as: "Orders",
+      // as: "Orders",
       foreignKey: "orderId"
     });
   };

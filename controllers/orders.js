@@ -1,12 +1,12 @@
 const models = require("../models");
-const order = models.Order;
-const orderProducts = models.orderProducts;
+const order = models.Orders;
+const orderProducts = models.OrderProducts;
 const products = models.Products;
 const user = models.User;
 
 const getOrders = (req, res) =>
   order
-    .findAll({ include: [{ model: orderProducts, include: [products], user }] })
+    .findAll({ include: [{ model: orderProducts, include: [products] }, user] })
     .then(order => res.send(order));
 
 const getOrdersById = (req, res) =>
@@ -24,7 +24,7 @@ const postOrders = (req, res) =>
 const putOrders = (req, res) => {
   order.update({ ...req.body }, { where: { id: req.params.id } }).then(() => {
     order.findByPk(req.params.id).then(order => {
-      resp.send(order.dataValues);
+      res.send(order.dataValues);
     });
   });
 };
