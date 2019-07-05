@@ -1,0 +1,26 @@
+{
+  "name": "burguer-queen-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmcamillo/burguer-queen-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmcamillo/burguer-queen-api/issues"
+  },
+  "homepage": "https://github.com/tmcamillo/burguer-queen-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1",
+    "sequelize": "^5.8.12",
+    "sequelize-cli": "^5.5.0",
+    "sqlite3": "^4.0.9"
+  }
+}
