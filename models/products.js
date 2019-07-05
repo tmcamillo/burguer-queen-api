@@ -10,7 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Products.associate = function(models) {
-    Products.hasMany(models.OrdersProducts, { foreignKey: "productId" });
+    Products.hasMany(models.OrderProducts, {
+      as: "OrderProducts",
+      foreignKey: "productId"
+    });
   };
 
   // menu.map(ele => {

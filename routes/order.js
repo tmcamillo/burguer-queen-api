@@ -7,4 +7,4 @@ router.post("/", order.postOrders);
 router.put("/:id", order.putOrders);
 router.delete("/:id", order.deleteOrder);
 
-module.exports = route;
+module.exports = router;
